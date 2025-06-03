@@ -2,100 +2,171 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rahma Alifia | Biomedical Informatics & Data Science</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rahma Alifia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f4f4f4;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
       color: #333;
+      background-color: #f9f9f9;
     }
     header {
-      background: #4A90E2;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
       background: white;
-    }
-    h1, h2 {
-      margin-top: 0;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    li {
-      margin-bottom: 5px;
-    }
-    .contact, .links {
-      margin-top: 20px;
-    }
-    footer {
+      padding: 2rem 1rem;
       text-align: center;
-      margin-top: 40px;
-      padding: 10px;
-      background: #eee;
-      font-size: 0.9em;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero {
+      background: #eafaf1;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #1a5244;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+    }
+    .button-group a {
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #1a5244;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #1a5244;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .card h4 {
+      margin: 0.5rem 0;
+      color: #1a5244;
+    }
+    .footer {
+      background: #f0f0f0;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .footer a {
+      color: #1a5244;
+      margin: 0 0.5rem;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Rahma Alifia</h1>
-    <p>Graduate Student in Biomedical Informatics & Data Science | Former Product Manager</p>
+    <p>Designing with Data. Delivering for Health.</p>
   </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>I am a graduate student at Arizona State University with a background in biomedical engineering and experience managing digital health and AI-based products. Previously, I led national-level health tech initiatives in Indonesia and am now researching informed consent frameworks for digital health at ASU.</p>
-    </section>
+  <div class="hero">
+    <h2>Designing <span style="color:#34a853">with Data</span>.<br>Delivering <span style="color:#34a853">for Health</span>.</h2>
+    <p>I translate complex digital health and data challenges into thoughtful, actionable solutions—bringing impact through design, research, and technology.</p>
+    <div class="button-group">
+      <a href="mailto:rahmaralifia@gmail.com">Get in Touch</a>
+      <a href="#">Download CV</a>
+    </div>
+  </div>
 
-    <section>
-      <h2>Experience Highlights</h2>
-      <ul>
-        <li><strong>Graduate Researcher</strong> – ASU | NIH-aligned consent analysis, data ethics</li>
-        <li><strong>Product Manager</strong> – Ministry of Health Indonesia | 300K+ daily users, biobank support</li>
-        <li><strong>AI Product/Project Manager</strong> – Prosa AI | Text-to-speech apps, national exam integration</li>
-      </ul>
-    </section>
+  <div class="section">
+    <h3>My Expertise</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Digital Product Strategy</h4>
+        <p>Translating health needs and policy goals into product roadmaps through stakeholder alignment.</p>
+      </div>
+      <div class="card">
+        <h4>Human-Centered Design</h4>
+        <p>Designing ethical, accessible health tools combining UI/UX with clinical workflows.</p>
+      </div>
+      <div class="card">
+        <h4>Health Data & Research</h4>
+        <p>Transforming data into insights via mixed-method research and public health knowledge.</p>
+      </div>
+      <div class="card">
+        <h4>Tech Planning & Implementation</h4>
+        <p>Bridging systems with FHIR, APIs, and scalable infrastructure.</p>
+      </div>
+    </div>
+  </div>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Python, SQL, SAS, Tableau</li>
-        <li>Product & Project Management, UX Research, Agile, A/B Testing</li>
-        <li>Tools: JIRA, Figma, VSC, Google Data Studio, Postman</li>
-      </ul>
-    </section>
+  <div class="section">
+    <h3>My Portfolio</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>SATUSEHAT Mobile</h4>
+        <p>Led national health app from feature design to data analysis for 300K+ daily users.</p>
+      </div>
+      <div class="card">
+        <h4>Biobank Tech Design</h4>
+        <p>Defined infrastructure roadmap through stakeholder interviews for genome & biobank systems.</p>
+      </div>
+      <div class="card">
+        <h4>T-SPOT Optimization</h4>
+        <p>Applied A3 Lean to reduce TB sample failure due to temperature fluctuation.</p>
+      </div>
+    </div>
+  </div>
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:ralifia@asu.edu">ralifia@asu.edu</a></li>
-        <li>Phone: +1 (704) 258-7131</li>
-        <li>Location: Tempe, Arizona, US</li>
-      </ul>
-    </section>
+  <div class="section">
+    <h3>My Work and Education</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>ASU SHARES Lab</h4>
+        <p>Graduate Researcher – NIH-aligned digital health ethics research (2024–present)</p>
+      </div>
+      <div class="card">
+        <h4>Ministry of Health</h4>
+        <p>Product Manager – Built EHR modules, biobank tools, managed national health tech (2022–2024)</p>
+      </div>
+      <div class="card">
+        <h4>Prosa.ai</h4>
+        <p>Project Manager – Launched AI voice tools; improved user adoption and revenue (2021–2022)</p>
+      </div>
+      <div class="card">
+        <h4>ASU Biomedical Informatics</h4>
+        <p>Master’s student in health data science, ML, biostats, and digital ethics (2024–2026)</p>
+      </div>
+    </div>
+  </div>
 
-    <section class="links">
-      <h2>Links</h2>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/rralifia" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/rralifia" target="_blank">GitHub</a></li>
-        <li><a href="#">Download My CV (PDF)</a> <!-- Add link when hosted --></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Rahma Alifia · Built with GitHub Pages
-  </footer>
+  <div class="footer">
+    <p>Contact me: <a href="mailto:rahmaralifia@gmail.com">rahmaralifia@gmail.com</a> | 
+    <a href="https://www.linkedin.com/in/rralifia">LinkedIn</a> | 
+    <a href="https://orcid.org/0009-0009-3462-1183">ORCID</a></p>
+  </div>
 </body>
 </html>
