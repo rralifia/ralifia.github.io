@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rahma Alifia</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
     body {
-      background-color: #F5FCFF; /* light background */
-      color: #0B0B0B; /* primary text */
+      background-color: #F5FCFF;
+      color: #0B0B0B;
     }
     nav {
-      background-color: #FFFFFF; /* white */
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: #FFFFFF;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     nav a {
-      color: #0B0B0B; /* nav link */
+      color: #0B0B0B;
       transition: color 0.2s;
     }
     nav a:hover {
-      color: #1A5244; /* dark green */
+      color: #1A5244;
     }
     .hero {
-      background-color: #F5FCFF; /* light background */
+      background-color: #F5FCFF;
     }
-    .hero h2, .hero p {
+    .hero h2,
+    .hero p {
       color: #0B0B0B;
     }
     .hero .accent {
-      color: #13C296; /* bright green */
+      color: #13C296;
     }
     .btn-primary {
-      background-color: #1A5244; /* darkest green */
+      background-color: #1A5244;
       color: #FFFFFF;
       transition: background-color 0.2s;
     }
     .btn-primary:hover {
-      background-color: #195143; /* slightly lighter dark green */
+      background-color: #195143;
     }
     .btn-outline {
       border: 2px solid #1A5244;
@@ -48,18 +49,19 @@
       color: #FFFFFF;
     }
     h3 {
-      color: #195143; /* section titles */
+      color: #195143;
     }
     h4 {
-      color: #1A5244; /* card titles */
+      color: #1A5244;
     }
-    p {
-      color: #637381; /* secondary text */
+    p,
+    li {
+      color: #637381;
     }
     .card {
       background-color: #FFFFFF;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
     .timeline-line {
       border-left: 2px solid #65877E;
@@ -74,10 +76,11 @@
   <!-- Navigation Bar -->
   <nav>
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- Replace text with logo image -->
-      <a href="#home"><img src="/path/to/logo.png" alt="Rahma Alifia Logo" class="h-10"></a>
+      <!-- Logo Image -->
+      <a href="#home"><img src="/logo.png" alt="Rahma Alifia Logo" class="h-10" /></a>
       <ul class="flex space-x-6 text-sm font-medium">
         <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#portfolio">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#blog">Blog</a></li>
@@ -88,20 +91,198 @@
 
   <!-- Hero Section -->
   <header id="home" class="hero py-16 text-center">
+    <!-- Your Photo -->
+    <img src="/rahma-photo.jpg" alt="Rahma Alifia" class="mx-auto w-32 h-32 rounded-full border-4 border-[#13C296] mb-4" />
     <p class="text-lg mb-2">Hey, I am Rahma</p>
     <h2 class="text-5xl font-bold leading-tight">
-      Designing<br>
-      <span class="accent">with Data.</span><br>
-      Delivering<br>
+      Designing<br />
+      <span class="accent">with Data.</span><br />
+      Delivering<br />
       <span class="accent">for Health.</span>
     </h2>
     <p class="max-w-2xl mx-auto mt-6 leading-relaxed">
-      I translate complex digital health and data challenges into thoughtful, actionable solutions—bringing impact through design, research, and technology.
+      I translate complex digital health and data challenges into thoughtful, actionable solutions—bringing impact
+      through design, research, and technology.
     </p>
     <div class="mt-8 space-x-4">
-      <a href="mailto:rahmaralifia@gmail.com" class="inline-block px-6 py-2 btn-primary rounded">Get in Touch</a>
+      <a href="mailto:ralifia@asu.edu" class="inline-block px-6 py-2 btn-primary rounded">Get in Touch</a>
       <a href="#" class="inline-block px-6 py-2 btn-outline rounded">Download CV</a>
     </div>
   </header>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-12 max-w-6xl mx-auto px-4">
+    <h3 class="text-xl uppercase mb-2">Skills</h3>
+    <h2 class="text-3xl font-semibold mb-4">My Expertise</h2>
+    <p class="max-w-2xl mb-8">
+      Blending design, data, and research to build meaningful digital products.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <div class="card p-6 text-center">
+        <img src="/icon-strategy.png" alt="Strategy Icon" class="mx-auto w-12 h-12 mb-4" />
+        <h4 class="text-lg font-semibold mb-2">Digital<br />Product<br />Strategy</h4>
+        <p>Translating health needs and policy goals into clear product roadmaps by stakeholder alignment and prioritization.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="card p-6 text-center">
+        <img src="/icon-design.png" alt="Design Icon" class="mx-auto w-12 h-12 mb-4" />
+        <h4 class="text-lg font-semibold mb-2">Human-<br />Centered<br />Design</h4>
+        <p>Designing ethical, accessible, and intuitive health tools by combining UI/UX principles with real-world clinical workflows.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="card p-6 text-center">
+        <img src="/icon-data.png" alt="Data Icon" class="mx-auto w-12 h-12 mb-4" />
+        <h4 class="text-lg font-semibold mb-2">Health Data &<br />Research<br />Analysis</h4>
+        <p>Transforming health data into actionable insights using mixed-method research, data science, and public health knowledge.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="card p-6 text-center">
+        <img src="/icon-tech.png" alt="Tech Icon" class="mx-auto w-12 h-12 mb-4" />
+        <h4 class="text-lg font-semibold mb-2">Technology<br />Planning &<br />Implementation</h4>
+        <p>Bridging health systems with technical tools like FHIR, APIs, and data models to support scalable and sustainable digital health.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-xl uppercase mb-2">Featured Projects</h3>
+      <h2 class="text-3xl font-semibold mb-4">My Portfolio</h2>
+      <p class="max-w-2xl mb-8">Real-world projects at the intersection of health, data, and design.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <div class="card p-6">
+          <span class="text-sm uppercase" style="color:#13C296;">Product Management</span>
+          <img src="/satusehat.jpg" alt="SATUSEHAT Mobile" class="rounded mb-4 mt-2" />
+          <h4 class="text-lg font-semibold mb-2">SATUSEHAT Mobile</h4>
+          <p class="mb-4">
+            Managed end-to-end product lifecycle: defined needs, designed features, analyzed usage data & user feedback,
+            and prioritized updates for a national health app.
+          </p>
+          <a href="#" class="font-medium" style="color:#1A5244;">Read more &gt;&gt;</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="card p-6">
+          <span class="text-sm uppercase" style="color:#13C296;">Stakeholders & Policy Research</span>
+          <img src="/biobank.jpg" alt="Biobank Tech Design" class="rounded mb-4 mt-2" />
+          <h4 class="text-lg font-semibold mb-2">Biobank Tech Design</h4>
+          <p class="mb-4">
+            Facilitated interviews and group discussions to define system needs, integration & infrastructure roadmap for
+            human genome data and biobank platforms.
+          </p>
+          <a href="#" class="font-medium" style="color:#1A5244;">Read more &gt;&gt;</a>
+        </div>
+        <!-- Project 3 -->
+        <div class="card p-6">
+          <span class="text-sm uppercase" style="color:#13C296;">Workflow Design & Improvement</span>
+          <img src="/tspot.jpg" alt="T-SPOT Optimization" class="rounded mb-4 mt-2" />
+          <h4 class="text-lg font-semibold mb-2">T-SPOT Optimization</h4>
+          <p class="mb-4">
+            Applied A3 Lean to propose a thermal control solution to reduce invalid Tuberculosis tests during sample
+            transport in extreme temperatures.
+          </p>
+          <a href="#" class="font-medium" style="color:#1A5244;">Read more &gt;&gt;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-12 max-w-6xl mx-auto px-4">
+    <h3 class="text-xl uppercase mb-2">Experience</h3>
+    <h2 class="text-3xl font-semibold mb-4">My Work and Education</h2>
+    <p class="max-w-2xl mb-8">
+      A cross-sector background in research, product management, and design across academia, government, and startup.
+    </p>
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-5 top-0 h-full timeline-line"></div>
+      <ul class="space-y-8">
+        <!-- ASU SHARES Lab -->
+        <li class="relative pl-12">
+          <div class="absolute left-0 top-1 w-10 h-10 bg-white timeline-dot rounded-full flex items-center justify-center"></div>
+          <h4 class="text-lg font-semibold mb-1">
+            ASU SHARES Lab <span style="color:#637381;">| Aug 2024 - present | Remote</span>
+          </h4>
+          <ul class="list-disc list-inside" style="color:#637381; margin-top:0.5rem;">
+            <li>Graduate Student Researcher: Developed and validated an ethically grounded digital-health consent framework using mixed-method research.</li>
+            <li>Authored a manuscript now under peer review.</li>
+          </ul>
+        </li>
+        <!-- Arizona State University -->
+        <li class="relative pl-12">
+          <div class="absolute left-0 top-1 w-10 h-10 bg-white timeline-dot rounded-full flex items-center justify-center"></div>
+          <h4 class="text-lg font-semibold mb-1">
+            Arizona State University <span style="color:#637381;">| Aug 2024 - present | Arizona, United States</span>
+          </h4>
+          <ul class="list-disc list-inside" style="color:#637381; margin-top:0.5rem;">
+            <li>MS Biomedical Informatics & Data Science: Hands-on experience in Applied Biostatistics (SAS), Machine Learning (Python), Clinical Problem Solving (A3 Lean Methods).</li>
+          </ul>
+        </li>
+        <!-- Indonesian Ministry of Health -->
+        <li class="relative pl-12">
+          <div class="absolute left-0 top-1 w-10 h-10 bg-white timeline-dot rounded-full flex items-center justify-center"></div>
+          <h4 class="text-lg font-semibold mb-1">
+            Indonesian Ministry of Health <span style="color:#637381;">| Jul 2022 - Jul 2024 | Jakarta, Indonesia</span>
+          </h4>
+          <ul class="list-disc list-inside" style="color:#637381; margin-top:0.5rem;">
+            <li>Product Manager: Led digital health product development for mobile apps (FHIR-based EHR modules, personal health) and biobanking platforms.</li>
+            <li>Coordinated stakeholders across engineering, policy, and UX.</li>
+          </ul>
+        </li>
+        <!-- Prosa.ai -->
+        <li class="relative pl-12">
+          <div class="absolute left-0 top-1 w-10 h-10 bg-white timeline-dot rounded-full flex items-center justify-center"></div>
+          <h4 class="text-lg font-semibold mb-1">
+            Prosa.ai <span style="color:#637381;">| Mar 2021 - Jun 2022 | Remote</span>
+          </h4>
+          <ul class="list-disc list-inside" style="color:#637381; margin-top:0.5rem;">
+            <li>Product/Project Manager: Managed development of AI-powered Bahasa-Indonesia voice apps (SaaS).</li>
+            <li>Enhanced operational workflow to boost adoption and revenue.</li>
+          </ul>
+        </li>
+        <!-- Institut Teknologi Bandung -->
+        <li class="relative pl-12">
+          <div class="absolute left-0 top-1 w-10 h-10 bg-white timeline-dot rounded-full flex items-center justify-center"></div>
+          <h4 class="text-lg font-semibold mb-1">
+            Institut Teknologi Bandung <span style="color:#637381;">| Aug 2016 - Oct 2020 | West Java, Indonesia</span>
+          </h4>
+          <ul class="list-disc list-inside" style="color:#637381; margin-top:0.5rem;">
+            <li>BSc Biomedical Engineering: Developed a mobile game for educating Indonesian youth about disaster risk management.</li>
+            <li>Authored a research paper.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Blog Section Placeholder -->
+  <section id="blog" class="py-12 max-w-6xl mx-auto px-4">
+    <h3 class="text-xl uppercase mb-2">Blog</h3>
+    <h2 class="text-3xl font-semibold mb-4">Thoughts & Insights</h2>
+    <p class="max-w-2xl mb-8" style="color:#637381;">Coming soon.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 max-w-6xl mx-auto px-4">
+    <h3 class="text-xl uppercase mb-2">Contact</h3>
+    <h2 class="text-3xl font-semibold mb-4">Let's Connect</h2>
+    <p class="max-w-2xl mb-6">
+      I plan with purpose, bridge strategy and execution, and deliver long-term solutions.
+      Feel free to reach out for collaboration or just say hi!
+    </p>
+    <div class="space-y-2">
+      <p><a href="mailto:ralifia@asu.edu" class="text-[#1A5244]">ralifia@asu.edu</a></p>
+      <p><a href="https://www.linkedin.com/in/rralifia" class="text-[#1A5244]">LinkedIn</a></p>
+      <p><a href="https://orcid.org/0009-0009-3462-1183" class="text-[#1A5244]">ORCID</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#FFFFFF] py-6 text-center text-sm mt-8">
+    <p style="color:#637381;">&copy; 2025 Rahma Alifia. All rights reserved.</p>
+  </footer>
 </body>
 </html>
