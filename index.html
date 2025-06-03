@@ -5,104 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rahma Alifia</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F5FCFF; /* light background */
+      color: #0B0B0B; /* primary text */
+    }
+    nav {
+      background-color: #FFFFFF; /* white */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: #0B0B0B; /* nav link */
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #1A5244; /* dark green */
+    }
+    .hero {
+      background-color: #F5FCFF; /* light background */
+    }
+    .hero h2, .hero p {
+      color: #0B0B0B;
+    }
+    .hero .accent {
+      color: #13C296; /* bright green */
+    }
+    .btn-primary {
+      background-color: #1A5244; /* darkest green */
+      color: #FFFFFF;
+      transition: background-color 0.2s;
+    }
+    .btn-primary:hover {
+      background-color: #195143; /* slightly lighter dark green */
+    }
+    .btn-outline {
+      border: 2px solid #1A5244;
+      color: #1A5244;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover {
+      background-color: #1A5244;
+      color: #FFFFFF;
+    }
+    h3 {
+      color: #195143; /* section titles */
+    }
+    h4 {
+      color: #1A5244; /* card titles */
+    }
+    p {
+      color: #637381; /* secondary text */
+    }
+    .card {
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .timeline-line {
+      border-left: 2px solid #65877E;
+    }
+    .timeline-dot {
+      background-color: #1A5244;
+      border: 2px solid #13C296;
+    }
+  </style>
 </head>
-<body class="font-sans bg-gray-50 text-gray-800">
-  <nav class="bg-white shadow-md">
+<body class="font-sans">
+  <!-- Navigation Bar -->
+  <nav>
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-green-700">Rahma Alifia</h1>
+      <!-- Replace text with logo image -->
+      <a href="#home"><img src="/path/to/logo.png" alt="Rahma Alifia Logo" class="h-10"></a>
       <ul class="flex space-x-6 text-sm font-medium">
-        <li><a href="#expertise" class="text-gray-700 hover:text-green-700">Skills</a></li>
-        <li><a href="#portfolio" class="text-gray-700 hover:text-green-700">Projects</a></li>
-        <li><a href="#experience" class="text-gray-700 hover:text-green-700">Experience</a></li>
-        <li><a href="#contact" class="text-gray-700 hover:text-green-700">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="bg-green-50 py-16 text-center">
-    <h2 class="text-4xl font-bold text-green-700">
-      Designing <span class="text-green-500">with Data</span>.<br>Delivering <span class="text-green-500">for Health</span>.
+  <!-- Hero Section -->
+  <header id="home" class="hero py-16 text-center">
+    <p class="text-lg mb-2">Hey, I am Rahma</p>
+    <h2 class="text-5xl font-bold leading-tight">
+      Designing<br>
+      <span class="accent">with Data.</span><br>
+      Delivering<br>
+      <span class="accent">for Health.</span>
     </h2>
-    <p class="max-w-xl mx-auto mt-4">
+    <p class="max-w-2xl mx-auto mt-6 leading-relaxed">
       I translate complex digital health and data challenges into thoughtful, actionable solutions—bringing impact through design, research, and technology.
     </p>
-    <div class="mt-6 space-x-4">
-      <a href="mailto:rahmaralifia@gmail.com" class="inline-block px-6 py-2 border-2 border-green-700 text-green-700 rounded hover:bg-green-700 hover:text-white transition">Get in Touch</a>
-      <a href="#" class="inline-block px-6 py-2 border-2 border-green-700 text-green-700 rounded hover:bg-green-700 hover:text-white transition">Download CV</a>
+    <div class="mt-8 space-x-4">
+      <a href="mailto:rahmaralifia@gmail.com" class="inline-block px-6 py-2 btn-primary rounded">Get in Touch</a>
+      <a href="#" class="inline-block px-6 py-2 btn-outline rounded">Download CV</a>
     </div>
   </header>
-
-  <section id="expertise" class="py-12 max-w-6xl mx-auto px-4">
-    <h3 class="text-2xl font-semibold mb-8">My Expertise</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Digital Product Strategy</h4>
-        <p>Translating health needs and policy goals into product roadmaps through stakeholder alignment.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Human-Centered Design</h4>
-        <p>Designing ethical, accessible health tools combining UI/UX with clinical workflows.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Health Data & Research</h4>
-        <p>Transforming data into insights via mixed-method research and public health knowledge.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Tech Planning & Implementation</h4>
-        <p>Bridging systems with FHIR, APIs, and scalable infrastructure.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="portfolio" class="py-12 bg-white max-w-6xl mx-auto px-4">
-    <h3 class="text-2xl font-semibold mb-8">My Portfolio</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-gray-50 p-6 rounded-lg shadow">
-        <img src="https://via.placeholder.com/400x200?text=SATUSEHAT" alt="SATUSEHAT Mobile" class="rounded mb-4">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">SATUSEHAT Mobile</h4>
-        <p>Led national health app from feature design to data analysis for 300K+ daily users.</p>
-      </div>
-      <div class="bg-gray-50 p-6 rounded-lg shadow">
-        <img src="https://via.placeholder.com/400x200?text=Biobank+Tech" alt="Biobank Tech Design" class="rounded mb-4">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Biobank Tech Design</h4>
-        <p>Defined infrastructure roadmap through stakeholder interviews for genome & biobank systems.</p>
-      </div>
-      <div class="bg-gray-50 p-6 rounded-lg shadow">
-        <img src="https://via.placeholder.com/400x200?text=T-SPOT" alt="T-SPOT Optimization" class="rounded mb-4">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">T-SPOT Optimization</h4>
-        <p>Applied A3 Lean to reduce TB sample failure due to temperature fluctuation.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="py-12 max-w-6xl mx-auto px-4">
-    <h3 class="text-2xl font-semibold mb-8">My Work and Education</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">ASU SHARES Lab</h4>
-        <p>Graduate Researcher – NIH-aligned digital health ethics research (2024–present)</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Ministry of Health</h4>
-        <p>Product Manager – Built EHR modules, biobank tools, managed national health tech (2022–2024)</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Prosa.ai</h4>
-        <p>Project Manager – Launched AI voice tools; improved user adoption and revenue (2021–2022)</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="text-lg font-semibold text-green-700 mb-2">ASU Biomedical Informatics</h4>
-        <p>Master’s student in health data science, ML, biostats, and digital ethics (2024–2026)</p>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contact" class="bg-gray-100 py-8 text-center text-sm">
-    <p class="mb-2">Contact me: <a href="mailto:rahmaralifia@gmail.com" class="text-green-700">rahmaralifia@gmail.com</a></p>
-    <div class="space-x-4">
-      <a href="https://www.linkedin.com/in/rralifia" class="text-green-700">LinkedIn</a>
-      <a href="https://orcid.org/0009-0009-3462-1183" class="text-green-700">ORCID</a>
-    </div>
-  </footer>
 </body>
 </html>
