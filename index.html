@@ -1,410 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alifia Site</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
-    body {
-      background-color: #F5FCFF;
-      color: #0B0B0B;
+    /* Colors */
+    :root {
+      --black: #000000;
+      --black-dark: #0B0B0B;
+      --green-light: #13C296;
+      --green-dark:  #1A5244;
+      --gray-medium: #637381;
+      --gray-light:  #F5FCFF;
+      --white:      #FFFFFF;
+      --border-gray: #65877E;
     }
-    /* Navigation Bar */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, sans-serif; background: var(--gray-light); color: var(--black-dark); }
+    a { text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { width: 90%; max-width: 1200px; margin: auto; }
+
+    /* Fixed Navbar */
     nav {
-      background-color: #FFFFFF;
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: var(--white);
+      padding: 0.5rem 0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
     }
-    nav a {
-      color: #0B0B0B;
-      transition: color 0.2s;
-      font-size: 0.875rem;
-      text-transform: none;
+    nav .container { display: flex; align-items: center; justify-content: space-between; }
+    nav .logo img { height: 35px; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul li a { color: var(--black-dark); font-size: 0.9rem; }
+
+    /* Hamburger Button */
+    .hamburger { display: none; flex-direction: column; justify-content: space-between; width: 24px; height: 18px; cursor: pointer; }
+    .hamburger span { display: block; height: 3px; background: var(--black-dark); border-radius: 2px; }
+    /* Mobile Menu */
+    .mobile-menu { display: none; flex-direction: column; background: var(--white); position: absolute; top: 64px; left: 0; width: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .mobile-menu li { padding: 0.25rem; border-bottom: 1px solid var(--gray-light) }
+
+    @media(max-width:768px) { nav ul { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; width: 100%; background: var(--white); }
+      .mobile-menu.open { display: flex; }
     }
-    nav a:hover {
-      color: #13C296;
-    }
-    /* Hero Section */
-    .hero {
-      position: relative;
-      background-color: #F5FCFF;
-      padding: 5rem 1rem;
-    }
-    .hero-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .hero-text {
-      flex: 1 1 400px;
-      text-align: left;
-      padding: 1rem;
-    }
-    .hero-text p {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero-text h2 {
-      font-size: 3rem;
-      color: #195143;
-      font-weight: bold;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .hero-text .accent {
-      color: #13C296;
-      display: block;
-    }
-    .hero-text .description {
-      font-size: 1rem;
-      max-width: 450px;
-      margin-bottom: 1.5rem;
-      color: #637381;
-    }
-    .hero-buttons a {
-      font-size: 0.9375rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      font-weight: 600;
-      display: inline-block;
-      margin-right: 0.5rem;
-    }
-    .btn-primary {
-      background-color: #13C296;
-      color: #FFFFFF;
-    }
-    .btn-primary:hover {
-      background-color: #195143;
-    }
-    .btn-outline {
-      border: 2px solid #13C296;
-      color: #1A5244;
-    }
-    .btn-outline:hover {
-      background-color: #195143;
-      color: #FFFFFF;
-    }
-    .hero-photo {
-      flex: 1 1 300px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-    }
-    .ellipse {
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      background-color: #13C296;
-      border-radius: 50%;
-      z-index: 0;
-      opacity: 0.1;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .hero-photo img {
-      position: relative;
-      z-index: 1;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      border: 4px solid #13C296;
-    }
+
+    /* Hero */
+    .hero { background: var(--gray-light); padding: 6rem 0 3rem; position: relative; }
+    .hero .container { display: flex; flex-wrap: wrap; align-items: left; gap: 2rem; }
+    .hero-text { flex: 1 1 400px; text-align: left; padding: 1 rem; }
+    .hero-text p.small { font-size: 1rem; color: var(--black-dark); margin-bottom: 0.5rem; }
+    .hero-text h1 { font-size: 2.5rem; color: var(--green-dark); line-height: 1.2; margin-bottom: 1rem; }
+    .hero-text .accent { color: var(--green-light); display: inline; }
+    .hero-text p.description { font-size: 1rem; color: var(--black-dark); max-width: 500px; margin-bottom: 1.5rem; }
+    .hero-buttons a { display: inline-block; font-size: 0.9rem; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: bold; margin-right: 1rem; }
+    .btn-primary { background: var(--green-light); color: var(--white); }
+    .btn-primary:hover { background-color: var(--green-dark); }
+    .btn-outline { border: 2px solid var(--green-light); color: var(--green-light); }
+    .btn-outline:hover { background-color: var(--green-dark); color: #FFFFFF;}
+
+    .hero-photo { flex: 1; position: relative; }
+    /* .hero-photo .ellipse { position: absolute; width: 300px; height: 300px; background: var(--green-light); border-radius: 50%; top: -20px; left: 50%; transform: translateX(-50%); opacity: 0.1; z-index: 1; } */
+    .hero-photo img { position: relative; z-index: 2; width: 280px; height: 280px; border-radius: 50%; border: 4px solid var(--green-light); }
+
     @media (max-width: 768px) {
-      .hero-content {
-        flex-direction: column-reverse;
-      }
-      .hero-text {
-        text-align: center;
-      }
-      .ellipse {
-        width: 300px;
-        height: 300px;
-        top: -20px;
-      }
+      .hero .container { flex-direction: column; text-align: center; }
+      .hero-photo { margin-bottom: 1rem; display: none }
     }
-    /* Skills Section */
-    #skills {
-      padding: 4rem 1rem;
-    }
-    #skills h3 {
-      font-size: 0.875rem;
-      color: #65877E;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-    #skills h2 {
-      font-size: 2rem;
-      color: #1A5244;
-      margin-bottom: 1rem;
-    }
-    #skills p {
-      font-size: 1rem;
-      color: #637381;
-      margin-bottom: 1.5rem;
-    }
-    .skill-card {
-      background-color: #FFFFFF;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      padding: 1.5rem;
-      text-align: center;
-    }
-    .skill-card img {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 0.75rem;
-    }
-    .skill-card h4 {
-      font-size: 1.125rem;
-      color: #1A5244;
-      margin-bottom: 0.5rem;
-    }
-    .skill-card p {
-      font-size: 0.9375rem;
-      color: #637381;
-      line-height: 1.4;
-    }
-    /* Portfolio Section */
-    #portfolio {
-      padding: 4rem 1rem;
-    }
-    #portfolio h3 {
-      font-size: 0.875rem;
-      color: #65877E;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-    #portfolio h2 {
-      font-size: 2rem;
-      color: #1A5244;
-      margin-bottom: 1rem;
-    }
-    #portfolio p {
-      font-size: 1rem;
-      color: #637381;
-      margin-bottom: 1.5rem;
-    }
-    .project-card {
-      background-color: #FFFFFF;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      padding: 1.5rem;
-    }
-    .project-card span {
-      font-size: 0.75rem;
-      color: #0B0B0B;
-      text-transform: capitalize;
-    }
-    .project-card h4 {
-      font-size: 1.125rem;
-      color: #1A5244;
-      margin-top: 0.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .project-card p {
-      font-size: 0.9375rem;
-      color: #637381;
-      line-height: 1.4;
-      margin-bottom: 0.75rem;
-    }
-    .project-card a {
-      font-size: 0.875rem;
-      color: #13C296;
-      font-weight: 600;
-    }
-    /* Experience Section */
-    #experience {
-      padding: 4rem 1rem;
-    }
-    #experience h3 {
-      font-size: 0.875rem;
-      color: #65877E;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-    #experience h2 {
-      font-size: 2rem;
-      color: #1A5244;
-      margin-bottom: 1rem;
-    }
-    .timeline {
-      position: relative;
-      margin-left: 1rem;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      border-left: 2px solid #65877E;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 2rem;
-      padding-left: 2rem;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -0.375rem;
-      top: 0.25rem;
-      width: 0.75rem;
-      height: 0.75rem;
-      background-color: #13C296;
-      border: 3px solid #FFFFFF;
-      border-radius: 50%;
-    }
+
+    /* Section Headers */
+    .section-header h2.subtitle { font-size: 1rem; color: var(--black-dark); margin-bottom: 0.25rem; }
+    .section-header h2.title { font-size: 2rem; color: var(--green-dark); margin-bottom: 1rem; }
+    .section-header p.desc { font-size: 1rem; color: var(--black-dark); margin-bottom: 1.5rem; }
+
+    /* Skills */
+    #skills { background: var(--white); padding: 3rem 0; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; }
+    .skill-card { background: var(--gray-light); border-radius: 8px; padding: 1.5rem; text-align: left; }
+    .skill-card img { width: 48px; height: 48px; margin-bottom: 0.75rem; }
+    .skill-card h3 { font-size: 1.125rem; color: var(--black-dark); margin-bottom: 0.5rem; }
+    .skill-card p { font-size: 0.875rem; color: var(--black-dark); }
+
+    /* Portfolio */
+    #portfolio { padding: 3rem 0; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.5rem; }
+    .project-card { background: var(--white); border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); padding: 1.5rem; }
+    .project-card span.category { font-size: 0.75rem; color: var(--green-light); text-transform: uppercase; }
+    .project-card img { border-radius: 4px; margin: 0.75rem 0; }
+    .project-card h3 { font-size: 1.125rem; color: var(--black-dark); margin-bottom: 0.5rem; }
+    .project-card p { font-size: 0.875rem; color: var(--black-dark); margin-bottom: 0.75rem; }
+    .project-card a { font-size: 0.875rem; color: var(--green-light); font-weight: bold; }
+
+    /* Experience */
+    #experience { background: var(--white); padding: 3rem 0; }
+    .timeline { position: relative; margin-left: 1rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; border-left: 2px solid var(--border-gray); }
+    .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 2rem; }
+    .timeline-item::before { content: ''; position: absolute; left: -0.375rem; top: 0.25rem; width: 0.75rem;
+      height: 0.75rem; background-color: var(--green-light); border: 1px solid var(--white); border-radius: 50%; }
     .timeline-item h4 {
-      font-size: 1.125rem;
-      color: #0B0B0B;
-      margin-bottom: 0.25rem;
-    }
-    .timeline-item span {
-      display: block;
-      font-size: 0.875rem;
-      color: #637381;
-      margin-bottom: 0.75rem;
-    }
-    .timeline-item ul li {
-      margin-left: 1rem;
-      list-style-type: disc;
-      color: #637381;
-      margin-bottom: 0.25rem;
-    }
-    /* Blog Section */
-    #blog {
-      padding: 4rem 1rem;
-    }
-    #blog h3 {
-      font-size: 0.875rem;
-      color: #65877E;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-    #blog h2 {
-      font-size: 2rem;
-      color: #1A5244;
-      margin-bottom: 1rem;
-    }
-    #blog p {
-      font-size: 1rem;
-      color: #637381;
-    }
-    /* Contact Section */
-    #contact {
-      padding: 4rem 1rem;
-      text-align: center;
-    }
-    #contact h3 {
-      font-size: 0.875rem;
-      color: #65877E;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-    #contact h2 {
-      font-size: 2rem;
-      color: #1A5244;
-      margin-bottom: 1rem;
-    }
-    #contact p {
-      font-size: 1rem;
-      color: #637381;
-      margin-bottom: 1rem;
-    }
-    #contact a {
-      display: block;
-      font-size: 0.9375rem;
-      color: #1A5244;
-      margin-bottom: 0.5rem;
-      text-decoration: none;
-    }
+      font-size: 1.125rem; color: var(--black-dark); margin-bottom: 0.25rem; }
+    .timeline-item span { display: block; font-size: 0.875rem; color: var(--gray-medium); margin-bottom: 0.75rem; }
+    .timeline-item ul li { margin-left: 1rem; list-style-type: disc; color: var(--border-gray); margin-bottom: 0.25rem; }
+
+    /* Contact */
+    #contact { padding: 3rem 0; text-align: center; }
+    #contact p.lead { font-size: 1rem; color: var(--black-dark); margin-bottom: 1rem; }
+    #contact .contact-list { display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem; color: var(--gray-medium) }
+    #contact .contact-list a { color: var(--green-light); }
+
     /* Footer */
-    footer {
-      background-color: #FFFFFF;
-      padding: 1rem 0;
-      text-align: center;
-    }
-    footer p {
-      font-size: 0.875rem;
-      color: #637381;
-    }
+    footer { background: var(--white); padding: 2rem 0; text-align: center; font-size: 0.875rem; color: var(--gray-medium); }
   </style>
 </head>
-<body class="font-sans">
+<body>
+
   <!-- Navigation -->
   <nav>
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="#home"><img src="/images/logo.png" alt="Rahma Alifia Logo" class="h-10" /></a>
-      <ul class="flex space-x-6">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#portfolio">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <!-- <li><a href="#blog">Blog</a></li> -->
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <div class="container">
+    <div class="logo">
+      <img src="/Users/ralifia/Documents/Website/images/logo.png" alt="RA Logo">
     </div>
-  </nav>
+
+    <!-- Desktop links -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="https://ralifia.substack.com/" target="_blank">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Hamburger icon (shown only on mobile) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Mobile links (toggled via JS) -->
+    <ul class="mobile-menu" id="mobile-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="https://ralifia.substack.com/" target="_blank">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
   <!-- Hero -->
-  <header id="home" class="hero">
-    <div class="hero-content">
-      <!-- Text -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
       <div class="hero-text">
-        <p>Hey, I am Rahma</p>
-        <h2>
-          Designing<br>
-          <span class="accent">with Data.</span><br>
-          Delivering<br>
-          <span class="accent">for Health.</span>
-        </h2>
-        <p class="description">
-          I translate complex digital health and data challenges into thoughtful, actionable solutions—bringing impact through design, research, and technology.
-        </p>
+        <p class="small">Hey, I am Rahma</p>
+        <h1>Designing <span class="accent">with Data.</span><br>Delivering <span class="accent">for Health.</span></h1>
+        <p class="description">I translate complex digital health and data challenges into thoughtful, actionable solutions—bringing impact through design, research, and technology.</p>
         <div class="hero-buttons">
           <a href="mailto:ralifia@asu.edu" class="btn-primary">Get in Touch</a>
-          <a href="#" class="btn-outline">Download CV</a>
+          <a href="https://drive.google.com/file/d/1SFRe_bzkd5Es13OuETc4A44bJ1_rycgW/view?usp=sharing" target="_blank" class="btn-outline">Download CV</a>
         </div>
       </div>
-      <!-- Photo + Ellipse -->
       <div class="hero-photo">
         <div class="ellipse"></div>
-        <img src="/images/rahma-photo.jpg" alt="Rahma Alifia" />
+        <img src="/Users/ralifia/Documents/Website/images/rahma-photo.png" alt="Rahma Alifia">
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- Skills -->
   <section id="skills">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3>Skills</h3>
-      <h2>My Expertise</h2>
-      <p>Blending design, data, and research to build meaningful digital products.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="subtitle">Skills</h2>
+        <h2 class="title">My Expertise</h2>
+        <p class="desc">Blending design, data, and research to build meaningful digital products.</p>
+      </div>
+      <div class="skills-grid">
         <div class="skill-card">
-          <img src="/images/icon-strategy.png" alt="Strategy Icon" />
-          <h4>Digital Product Strategy</h4>
+          <img src="/Users/ralifia/Documents/Website/images/icon-strategy.png" alt="Digital Strategy Icon">
+          <h3>Digital Product Strategy</h3>
           <p>Translating health needs and policy goals into clear product roadmaps by stakeholder alignment and prioritization.</p>
         </div>
         <div class="skill-card">
-          <img src="/images/icon-design.png" alt="Design Icon" />
-          <h4>Human-Centered Design</h4>
+          <img src="/Users/ralifia/Documents/Website/images/icon-design.png" alt="Design Icon">
+          <h3>Human-Centered Design</h3>
           <p>Designing ethical, accessible, and intuitive health tools by combining UI/UX principles with real-world clinical workflows.</p>
         </div>
         <div class="skill-card">
-          <img src="/images/icon-data.png" alt="Data Icon" />
-          <h4>Health Data & Research Analysis</h4>
+          <img src="/Users/ralifia/Documents/Website/images/icon-data.png" alt="Data Icon">
+          <h3>Health Data & Research Analysis</h3>
           <p>Transforming health data into actionable insights using mixed-method research, data science, and public health knowledge.</p>
         </div>
         <div class="skill-card">
-          <img src="/images/icon-tech.png" alt="Tech Icon" />
-          <h4>Technology Planning & Implementation</h4>
+          <img src="/Users/ralifia/Documents/Website/images/icon-tech.png" alt="Tech Icon">
+          <h3>Technology Planning & Implementation</h3>
           <p>Bridging health systems with technical tools like FHIR, APIs, and data models to support scalable and sustainable digital health.</p>
         </div>
       </div>
@@ -413,29 +206,31 @@
 
   <!-- Portfolio -->
   <section id="portfolio">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3>Featured Projects</h3>
-      <h2>My Portfolio</h2>
-      <p class="pb-4">Real-world projects at the intersection of health, data, and design.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="subtitle">Featured Projects</h2>
+        <h2 class="title">My Portfolio</h2>
+        <p class="desc">Real-world projects at the intersection of health, data, and design.</p>
+      </div>
+      <div class="portfolio-grid">
         <div class="project-card">
-          <span>Product Management</span>
-          <img src="/satusehat.jpg" alt="SATUSEHAT Mobile" class="rounded mb-4 mt-2" />
-          <h4>SATUSEHAT Mobile</h4>
+          <span class="category">Product Management</span>
+          <img src="/Users/ralifia/Documents/Website/images/satusehat.png" alt="SATUSEHAT Mobile">
+          <h3>SATUSEHAT Mobile</h3>
           <p>Managed end-to-end product lifecycle: defined needs, designed features, analyzed usage data & user feedback, and prioritized updates for a national health app.</p>
           <a href="#">Read more >></a>
         </div>
         <div class="project-card">
-          <span>Stakeholders & Policy Research</span>
-          <img src="/biobank.jpg" alt="Biobank Tech Design" class="rounded mb-4 mt-2" />
-          <h4>Biobank Tech Design</h4>
+          <span class="category">Stakeholders & Policy Research</span>
+          <img src="/Users/ralifia/Documents/Website/images/biobank.png" alt="Biobank Tech Design">
+          <h3>Biobank Tech Design</h3>
           <p>Facilitated interviews and group discussions to define system needs, integration & infrastructure roadmap for human genome data and biobank platforms.</p>
           <a href="#">Read more >></a>
         </div>
         <div class="project-card">
-          <span>Workflow Design & Improvement</span>
-          <img src="/tspot.jpg" alt="T-SPOT Optimization" class="rounded mb-4 mt-2" />
-          <h4>T-SPOT Optimization</h4>
+          <span class="category">Workflow Design & Improvement</span>
+          <img src="/Users/ralifia/Documents/Website/images/tspot.png" alt="T-SPOT Optimization">
+          <h3>T-SPOT Optimization</h3>
           <p>Applied A3 Lean to propose a thermal control solution to reduce invalid Tuberculosis tests during sample transport in extreme temperatures.</p>
           <a href="#">Read more >></a>
         </div>
@@ -445,65 +240,80 @@
 
   <!-- Experience -->
   <section id="experience">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3>Experience</h3>
-      <h2>My Work and Education</h2>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="subtitle">Experience</h2>
+        <h2 class="title">My Work and Education</h2>
+      </div>
       <div class="timeline mt-8">
         <div class="timeline-item">
-          <h4>ASU SHARES Lab</h4>
+          <h4>Student Researcher @ ASU SHARES Lab</h4>
           <span>Aug 2024 - Present | Remote</span>
           <ul>
-            <li>Graduate Student Researcher: Developed and validated an ethically grounded digital-health consent framework using mixed-method research.</li>
+            <li>Developed and validated an ethically grounded digital-health consent framework using mixed-method research.</li>
             <li>Authored a manuscript now under peer review.</li>
           </ul>
         </div>
         <div class="timeline-item">
-          <h4>Arizona State University</h4>
+          <h4>MS Candidate, Biomedical Informatics and Data Science @ Arizona State University</h4>
           <span>Aug 2024 - Present | Tempe, AZ</span>
           <ul>
-            <li>MS Biomedical Informatics & Data Science: Hands-on experience in Applied Biostatistics (SAS), Machine Learning (Python), Clinical Problem Solving (A3 Lean Methods).</li>
+            <li>Hands-on experience in Applied Biostatistics (SAS), Machine Learning (Python), Clinical Problem Solving (A3 Lean Methods).</li>
           </ul>
         </div>
         <div class="timeline-item">
-          <h4>Indonesian Ministry of Health</h4>
+          <h4>Product Manager @ Indonesian Ministry of Health</h4>
           <span>Jul 2022 - Jul 2024 | Jakarta, Indonesia</span>
           <ul>
-            <li>Product Manager: Led digital health product development for mobile apps (FHIR-based EHR modules, personal health) and biobanking platforms.</li>
+            <li>Led digital health product development for mobile apps (FHIR-based EHR modules, personal health) and biobanking platforms.</li>
             <li>Coordinated stakeholders across engineering, policy, and UX.</li>
           </ul>
         </div>
         <div class="timeline-item">
-          <h4>Prosa.ai</h4>
+          <h4>Product/Project Manager @ Prosa.ai</h4>
           <span>Mar 2021 - Jun 2022 | Remote</span>
           <ul>
-            <li>Product/Project Manager: Managed development of AI-powered Bahasa-Indonesia voice apps (SaaS).</li>
+            <li>Managed development of AI-powered Bahasa-Indonesia voice apps (SaaS).</li>
             <li>Enhanced operational workflow to boost adoption and revenue.</li>
           </ul>
         </div>
         <div class="timeline-item">
-          <h4>Institut Teknologi Bandung</h4>
+          <h4>BSc, Biomedical Engineering @ Institut Teknologi Bandung</h4>
           <span>Aug 2016 - Oct 2020 | West Java, Indonesia</span>
           <ul>
-            <li>BSc Biomedical Engineering: Developed a mobile game for educating Indonesian youth about disaster risk management.</li>
-            <li>Authored a research paper.</li>
+            <li>Developed a mobile game for educating Indonesian youth about disaster risk management.</li>
+            <li>Published a research paper.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact">
-    <div class="max-w-6xl mx-auto px-4 py-12 text-center">
-      <h3>Contact</h3>
-      <h2>Let’s Connect</h2>
-      <p class="mt-4 mb-4">I plan with purpose, bridge strategy and execution, and deliver long-term solutions. Feel free to reach out for collaboration or just say hi!</p>
-      <p><a href="mailto:ralifia@asu.edu">ralifia@asu.edu</a></p>
-      <p><a href="https://www.linkedin.com/in/rralifia">LinkedIn</a></p>
-      <p><a href="https://orcid.org/0009-0009-3462-1183">ORCID</a></p>
+    <div class="container">
+      <div class="section-header" style="text-align:left;">
+        <!-- <h2 class="subtitle">Contact</h2> -->
+        <h2 class="title">Contact</h2>
+        <p class="desc">I plan with purpose, bridge strategy and execution, and deliver long-term solutions. Let’s connect to turn big ideas into real outcomes!</p>
+      </div>
+      <div class="contact-list" style="text-align:left;">
+        <p>Email: <a href="mailto:rahmaralifia@gmail.com">rahmaralifia@gmail.com</a></p>
+        <p>Linkedin: <a href="https://www.linkedin.com/in/rralifia">https://www.linkedin.com/in/rralifia</a></p>
+        <p>ORCID: <a href="https://orcid.org/0009-0009-3462-1183">https://orcid.org/0009-0009-3462-1183</a></p>
+      </div>
     </div>
   </section>
+
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+</script>
+
 
   <!-- Footer -->
   <footer>
